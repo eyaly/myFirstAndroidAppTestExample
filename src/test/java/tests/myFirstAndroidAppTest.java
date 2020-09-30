@@ -41,6 +41,8 @@ public class myFirstAndroidAppTest {
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String methodName = method.getName();
 
+        System.out.println("Sauce - username: " + username + " .accesskey: " + accesskey + " .methodName: " + methodName);
+
         String sauceUrl;
 
         if (region.equalsIgnoreCase("eu")) {
@@ -63,6 +65,7 @@ public class myFirstAndroidAppTest {
         capabilities.setCapability("app", "storage:filename=" + appName);
         capabilities.setCapability("phoneOnly", true);
 
+        System.out.println("Sauce. URL: " + url);
         // Launch remote browser and set it as the current thread
      //   androidDriver.set(new AndroidDriver(new URL(SAUCE_REMOTE_URL),capabilities));
         androidDriver.set( new AndroidDriver(url, capabilities));
@@ -104,25 +107,25 @@ public class myFirstAndroidAppTest {
         Assert.assertEquals(expectedResult,actualRes );
     }
 
-    @Test
-    public void calcAddNumNegative() {
-        String strNum1 = "2";
-        String strNum2 = "7";
-        String expectedResult = "9";
-
-        System.out.println("Sauce - Start calcAddNumNegative test");
-        WebElement num1Edit = (WebElement) androidDriver.get().findElementById(num1);
-        num1Edit.sendKeys(strNum1);
-
-        WebElement num2Edit = (WebElement) androidDriver.get().findElementById(num2);
-        num2Edit.sendKeys(strNum2);
-
-        WebElement sumButtonElement = (WebElement) androidDriver.get().findElementById(sumButton);
-        sumButtonElement.click();
-
-        WebElement resultEdit = (WebElement) androidDriver.get().findElementById(result);
-        String actualRes = resultEdit.getText();
-
-        Assert.assertEquals(expectedResult,actualRes );
-    }
+//    @Test
+//    public void calcAddNumNegative() {
+//        String strNum1 = "2";
+//        String strNum2 = "7";
+//        String expectedResult = "9";
+//
+//        System.out.println("Sauce - Start calcAddNumNegative test");
+//        WebElement num1Edit = (WebElement) androidDriver.get().findElementById(num1);
+//        num1Edit.sendKeys(strNum1);
+//
+//        WebElement num2Edit = (WebElement) androidDriver.get().findElementById(num2);
+//        num2Edit.sendKeys(strNum2);
+//
+//        WebElement sumButtonElement = (WebElement) androidDriver.get().findElementById(sumButton);
+//        sumButtonElement.click();
+//
+//        WebElement resultEdit = (WebElement) androidDriver.get().findElementById(result);
+//        String actualRes = resultEdit.getText();
+//
+//        Assert.assertEquals(expectedResult,actualRes );
+//    }
 }
