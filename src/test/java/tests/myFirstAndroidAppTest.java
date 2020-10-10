@@ -65,6 +65,10 @@ public class myFirstAndroidAppTest {
         capabilities.setCapability("app", "storage:filename=" + appName);
         capabilities.setCapability("phoneOnly", true);
 
+        String buildName = System.getenv("Build.DefinitionName");
+        String buildID = System.getenv("Build.BuildId");
+        System.out.println("Sauce. Build name: " + buildName + " .Build number: "+ buildID);
+
         System.out.println("Sauce. URL: " + url);
         // Launch remote browser and set it as the current thread
      //   androidDriver.set(new AndroidDriver(new URL(SAUCE_REMOTE_URL),capabilities));
