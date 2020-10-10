@@ -10,6 +10,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      echo "Hello world"
+      echo $(Build.DefinitionName)
+      echo $(Build.BuildId)
+      echo "123"
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -20,3 +27,5 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
+    options: '-Dbuild=$(Build.DefinitionName):$(Build.BuildId) 
+
