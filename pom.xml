@@ -12,6 +12,7 @@
         <testngXmlDir>src/test/resources/config</testngXmlDir>
         <testngXmlFile>testng_android.xml</testngXmlFile>
         <region>eu</region>
+        <build>default</build>
         <testng.version>6.14.3</testng.version>
         <selenium.version>3.141.59</selenium.version>
         <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>

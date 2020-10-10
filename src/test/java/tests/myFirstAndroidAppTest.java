@@ -69,6 +69,9 @@ public class myFirstAndroidAppTest {
         String buildID = System.getenv("Build.BuildId");
         System.out.println("Sauce. Build name: " + buildName + " .Build number: "+ buildID);
 
+        String build = getProperty("build", "default");
+        System.out.println("Sauce. Build name: " + build);
+
         System.out.println("Sauce. URL: " + url);
         // Launch remote browser and set it as the current thread
      //   androidDriver.set(new AndroidDriver(new URL(SAUCE_REMOTE_URL),capabilities));
