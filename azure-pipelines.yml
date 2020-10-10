@@ -27,5 +27,5 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
-    options: '-Dbuild=$(Build.DefinitionName):$(Build.BuildId) 
+    options: '-Dbuild=$(Build.DefinitionName):$(Build.BuildId)'
 
