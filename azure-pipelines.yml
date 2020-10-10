@@ -15,6 +15,7 @@ steps:
     script: |
       echo "Hello world"
       echo $(Build.DefinitionName)
+      echo $(Build.BuildId)
       echo "123"
 # - task: Maven@3
 #   inputs:
