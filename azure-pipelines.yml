@@ -11,13 +11,13 @@ pool:
 
 steps:
 - task: CmdLine@2
+  # Print info about the build
   inputs:
     script: |
-      echo "Hello world"
       echo $(Build.DefinitionName)
       echo $(Build.BuildId)
-      echo "123"
 - task: Maven@3
+  # Run automated tests on Sauce platform
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -27,5 +27,5 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
-    options: '-Dbuild=$(Build.DefinitionName):$(Build.BuildId)'
+    options: '-Dbuild=$(Build.DefinitionName):$(Build.BuildId) -Dregion=eu'
 
